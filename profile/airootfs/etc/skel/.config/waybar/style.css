@@ -1,0 +1,40 @@
+* {
+    border: none;
+    border-color: #000000;
+    border-radius: 0px;
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: bold;
+    font-size: 16px;
+    color: #ff0000;
+    padding: 0px 12px;
+}
+tooltip, window#waybar {
+    background: #320000;
+}
+tooltip label {
+    padding: 12px;
+}
+#custom-launch_wofi{
+   padding-right: 16px;
+   padding-left: 2px;
+} 
+#taskbar {
+    padding: 0px 12px; 	
+}
+#taskbar button {
+    padding: 0px 4px;
+    color: #ff0000;
+    animation: gradient_f 4s ease-in infinite;
+    transition: all 0.2s cubic-bezier(.4,-1.2,.4,2);
+}
+#taskbar button:hover {
+    background: #320000;
+}
+#taskbar button.active {
+    background: #ff0000;
+    color: #ff0000;
+    padding: 0px 16px;
+    animation: gradient_f 8s ease-in infinite;
+    transition: all 0.2s cubic-bezier(.4,-1.2,.4,2);
+}
+

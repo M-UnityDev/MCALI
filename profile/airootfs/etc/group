@@ -1,0 +1,5 @@
+root:x:0:root
+adm:x:4:munity
+wheel:x:10:munity
+uucp:x:14:munity
+munity:x:1000:

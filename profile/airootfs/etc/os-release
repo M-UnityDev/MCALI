@@ -1,0 +1,11 @@
+NAME="M-Unity's Custom Arch Linux ISO"
+PRETTY_NAME="M-Unity's Custom Arch Linux ISO"
+ID="arch"
+BUILD_ID=rolling
+ANSI_COLOR="31m"
+HOME_URL="https://site.com"
+DOCUMENTATION_URL="https://site.com"
+SUPPORT_URL="https://site.com"
+BUG_REPORT_URL="https://site.com"
+PRIVACY_POLICY_URL="https://site.com"
+LOGO="archlinux-logo"

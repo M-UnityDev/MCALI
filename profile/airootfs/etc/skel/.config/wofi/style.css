@@ -1,0 +1,36 @@
+window {
+    background-color: #f40000;
+}
+* {
+    font-family: JetBrainsMono Nerd Font;
+    border-radius: 0px;
+}
+#input {
+    padding: 4px 20px;
+    color: #f40000;
+    font-weight: bold;
+    background-color: #320000;
+    outline: none;
+    margin: 10px;
+}
+#inner-box {
+    color: #f40000;
+    font-weight: bold;
+    background-color: #320000;
+}
+#outer-box {
+    background-color: #320000;
+}
+#img {
+    margin: 4px 8px;
+}
+#text:selected {
+    color: #ffffff;
+}
+#entry {
+    margin: 0px 4px;
+    background-color: #320000;
+}
+#entry:selected {
+    background-color: #ff0000;
+}

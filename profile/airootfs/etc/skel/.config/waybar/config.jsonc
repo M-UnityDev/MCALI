@@ -1,0 +1,126 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 30,
+    "modules-left": ["custom/launch_wofi","cpu","memory","disk","clock"],
+    "modules-center": ["wlr/taskbar"],
+    "modules-right": ["hyprland/language","network","battery","wireplumber","tray","temperature"],
+
+    "hyprland/language": {
+    "format-en": "EN",
+    "format-ru": "RU"
+    },
+
+    "hyprland/window": {
+        "format": "{}"
+    },
+
+    "custom/launch_wofi": {
+        "format": "",
+        "on-click": "sh -c '(wofi)' & disown",
+        "tooltip": false
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "max-length": 10,
+        "on-click": "kitty bashtop"
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/",
+        "tooltip": true,
+        "tooltip-format": "SSD - {used} used out of {total} on {path} ({percentage_used}%)",
+        "on-click": "kitty --start-as=fullscreen --title bashtop sh -c 'bashtop'"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10,
+        "tooltip": true,
+        "tooltip-format": "Memory - {used:0.1f}GB used",
+        "on-click": "kitty --start-as=fullscreen --title bashtop sh -c 'bashtop'"
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "spacing": 0,
+        "on-click-middle" : "close",
+        "tooltip-format": "{title}",
+        "on-click": "activate"
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "clock": {
+        "format": "{:%H:%M}  ",
+        "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "on-click-right": "mode",
+                    "format": {
+                              "months":     "<span color='#ff0000'><b>{}</b></span>",
+                              "days":       "<span color='#ec0000'><b>{}</b></span>",
+                              "weeks":      "<span color='#990000'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ff0000'><b>{}</b></span>",
+                              "today":      "<span color='#ff0000'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    },
+
+    "network": {
+        "format-wifi": " {icon}",
+        "format-ethernet": " ",
+        "format-disconnected": "",
+        "tooltip-format": "{essid}",
+        "on-click": "kitty nmtui",
+        "format-icons": ["󰤯 ","󰤟 ","󰤢 ","󰤢 ","󰤨 "]
+    },
+    "temperature": {
+	"thermal-zone": 0,
+	"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "critical-threshold": 50,
+        "format": " {temperatureC}°C  ",
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "wireplumber": {        
+	"format": "{volume}%",
+        "on-click": "kitty --hold wpctl status"
+    }
+}
