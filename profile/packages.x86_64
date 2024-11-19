@@ -136,4 +136,5 @@ pipewire
 pipewire-pulse
 pipewire-jack
 pipewire-alsa
-
+imagemagisk
+plymouth

@@ -1,8 +1,8 @@
 iso_name="mcali"
-iso_label="MCALI[devtest 0.002]$(date +%Y%m)"
+iso_label="MCALI"
 iso_publisher="M-Unity Software <https://site.test>"
 iso_application="M-Unity's Custom Arch Linux ISO"
-iso_version="$(date +%Y.%m.%d)"
+iso_version="-test0.0031$(date +%Y.%m.%d)"
 install_dir="arch"
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito' 'uefi-x64.systemd-boot.esp' 'uefi-x64.systemd-boot.eltorito')
 arch="x86_64"
