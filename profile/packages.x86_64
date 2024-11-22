@@ -138,5 +138,5 @@ pipewire-jack
 pipewire-alsa
 imagemagick
 plymouth
-nerd-fonts
 ttf-font-awesome
+ttf-jetbrains-mono-nerd
