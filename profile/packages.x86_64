@@ -4,6 +4,7 @@ arch-install-scripts
 archinstall
 b43-fwcutter
 base
+base-devel
 bcachefs-tools
 bind
 bolt
@@ -140,3 +141,4 @@ imagemagick
 plymouth
 ttf-font-awesome
 ttf-jetbrains-mono-nerd
+go
