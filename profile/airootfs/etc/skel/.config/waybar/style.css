@@ -5,19 +5,18 @@
     font-family: "JetBrains Mono Nerd Font";
     font-weight: bold;
     font-size: 16px;
+	text-shadow: none;
+	box-shadow: none;
     color: #ff0000;
-    padding: 0px 12px;
+    padding: 0px 14px;
 }
 tooltip, window#waybar {
     background: #320000;
 }
 tooltip label {
-    padding: 12px;
+    padding: 6px;
+	font-size: 14px;
 }
-#custom-launch_wofi{
-   padding-right: 16px;
-   padding-left: 2px;
-} 
 #taskbar {
     padding: 0px 12px; 	
 }
@@ -33,8 +32,13 @@ tooltip label {
 #taskbar button.active {
     background: #ff0000;
     color: #ff0000;
-    padding: 0px 16px;
+    padding: 0px 6px;
     animation: gradient_f 8s ease-in infinite;
     transition: all 0.2s cubic-bezier(.4,-1.2,.4,2);
 }
-
+#clock {
+	padding-left: 2px;
+}
+#temperature {
+	padding-right: 2px;
+}

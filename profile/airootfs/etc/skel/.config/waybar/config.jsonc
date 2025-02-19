@@ -6,35 +6,25 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 30,
-    "modules-left": ["custom/launch_wofi","cpu","memory","disk","clock"],
+    "modules-left": ["clock","cpu","memory","disk","hyprland/language"],
     "modules-center": ["wlr/taskbar"],
-    "modules-right": ["hyprland/language","network","battery","wireplumber","tray","temperature"],
+    "modules-right": ["network","tray","battery","wireplumber","temperature"],
 
     "hyprland/language": {
-    "format-en": "EN",
-    "format-ru": "RU"
-    },
-
-    "hyprland/window": {
-        "format": "{}"
-    },
-
-    "custom/launch_wofi": {
-        "format": "",
-        "on-click": "sh -c '(wofi)' & disown",
-        "tooltip": false
+    "format-en": " EN",
+    "format-ru": " RU"
     },
 
     "cpu": {
         "interval": 10,
-        "format": " {usage}%",
+        "format": " {usage}%",
         "max-length": 10,
         "on-click": "kitty bashtop"
     },
 
     "disk": {
         "interval": 30,
-        "format": "󰋊 {percentage_used}%",
+        "format": " {percentage_used}%",
         "path": "/",
         "tooltip": true,
         "tooltip-format": "SSD - {used} used out of {total} on {path} ({percentage_used}%)",
@@ -43,7 +33,7 @@
 
     "memory": {
         "interval": 30,
-        "format": " {}%",
+        "format": " {}%",
         "max-length": 10,
         "tooltip": true,
         "tooltip-format": "Memory - {used:0.1f}GB used",
@@ -52,7 +42,7 @@
 
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 18,
+        "icon-size": 16,
         "spacing": 0,
         "on-click-middle" : "close",
         "tooltip-format": "{title}",
@@ -60,13 +50,12 @@
     },
 
     "tray": {
-        "icon-size": 18,
-        "spacing": 10
+        "icon-size": 16,
     },
 
     "clock": {
-        "format": "{:%H:%M}  ",
-        "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+        "format": "{:%H:%M}",
+        "format-alt": "{:%d.%m.%Y}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
                     "mode"          : "year",
@@ -92,18 +81,18 @@
     },
 
     "network": {
-        "format-wifi": " {icon}",
-        "format-ethernet": " ",
-        "format-disconnected": "",
+        "format-wifi": "{icon}",
+        "format-ethernet": "",
+        "format-disconnected": "󰅛",
         "tooltip-format": "{essid}",
         "on-click": "kitty nmtui",
-        "format-icons": ["󰤯 ","󰤟 ","󰤢 ","󰤢 ","󰤨 "]
+        "format-icons": ["󰤯","󰤟","󰤢","󰤢","󰤨"]
     },
     "temperature": {
 	"thermal-zone": 0,
 	"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
         "critical-threshold": 50,
-        "format": " {temperatureC}°C  ",
+        "format": "{temperatureC}°C",
         "tooltip": false
     },
     "battery": {
@@ -120,7 +109,7 @@
     },
 
     "wireplumber": {        
-	"format": "{volume}%",
-        "on-click": "kitty --hold wpctl status"
+	"format": " {volume}%",
+        "on-click": "kitty --hold -T activewindow wpctl status"
     }
 }
