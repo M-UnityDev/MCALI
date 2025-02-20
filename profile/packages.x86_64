@@ -5,6 +5,7 @@ archinstall
 b43-fwcutter
 base
 base-devel
+git
 bcachefs-tools
 bind
 bolt
