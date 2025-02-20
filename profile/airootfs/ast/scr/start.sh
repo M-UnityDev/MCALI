@@ -1,4 +1,6 @@
 #/bin/bash env
+pacman -Sy
+su munity
 echo "Installing YAY..."
 git clone https://aur.archlinux.org/yay.git
 cd yay
