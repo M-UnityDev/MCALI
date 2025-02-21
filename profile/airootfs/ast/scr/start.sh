@@ -2,7 +2,7 @@
 sudo pacman -Sy
 echo "Installing YAY..."
 git clone https://aur.archlinux.org/yay.git /opt/
-cd yay
+cd /opt/yay
 makepkg -sid --noconfirm
 cd $HOME
 echo "Installing AUR Packages..."
