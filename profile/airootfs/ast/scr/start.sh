@@ -1,7 +1,7 @@
 #/bin/bash env
 sudo pacman -Sy
 echo "Installing YAY..."
-git clone https://aur.archlinux.org/yay.git
+git clone https://aur.archlinux.org/yay.git /opt/
 cd yay
 makepkg -sid --noconfirm
 cd $HOME
