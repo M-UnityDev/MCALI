@@ -1,5 +1,6 @@
+@import "/ast/thm/cur/ColorCurrent.css";
 window {
-    background-color: #f40000;
+    background-color: @Foreground;
 }
 * {
     font-family: JetBrainsMono Nerd Font;
@@ -7,30 +8,29 @@ window {
 }
 #input {
     padding: 4px 20px;
-    color: #f40000;
+    color: @Foreground;
     font-weight: bold;
-    background-color: #320000;
-    outline: none;
+    background-color: @Background;
     margin: 10px;
 }
 #inner-box {
-    color: #f40000;
+	color: @Foreground;
     font-weight: bold;
-    background-color: #320000;
+    background-color: @Background;
 }
 #outer-box {
-    background-color: #320000;
+    background-color: @Background;
 }
 #img {
     margin: 4px 8px;
 }
 #text:selected {
-    color: #ffffff;
+    color: #000000;
 }
 #entry {
     margin: 0px 4px;
-    background-color: #320000;
+    background-color: @Background;
 }
 #entry:selected {
-    background-color: #ff0000;
+    background-color: @Foreground;
 }

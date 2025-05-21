@@ -1,21 +1,24 @@
+@import "/ast/thm/cur/ColorCurrent.css";
 * {
+	border: none;
 	background-image: none;
 	box-shadow: none;
+    font-family: "JetBrains Mono Nerd Font";
+	font-weight: bold;
+	font-size: 16;
 }
-window {background-color: rgba(50, 0, 0, 0.5);}
+window {background-color: @Background;}
 button {
-	text-decoration-color: #FFFFFF;
-    	color: #FFFFFF;
+    color: #FFFFFF;
 	border-radius:0px;
-	border-color:#320000;
-	background-color: #320000;
+	border-color: @Background;
+	background-color: @Background;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 25%;
 }
 button:focus, button:active {
-	background-color: #ff0000;
-	outline-style: none;
+	background-color: @Foreground;
 }
 #lock {background-image: image(url("/ast/spr/wlogout/icons/lock.png"));}
 #logout {background-image: image(url("/ast/spr/wlogout/icons/logout.png"));}
