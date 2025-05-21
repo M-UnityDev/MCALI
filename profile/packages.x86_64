@@ -27,7 +27,6 @@ e2fsprogs
 edk2-shell
 efibootmgr
 espeakup
-emptty
 ethtool
 exfatprogs
 f2fs-tools
@@ -136,3 +135,4 @@ plymouth
 ttf-jetbrains-mono-nerd
 go
 networkmanager
+uwsm
