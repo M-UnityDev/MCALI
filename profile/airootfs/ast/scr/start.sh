@@ -1,9 +1,4 @@
-#/bin/bash env
-b=$HOME
-a="/"
-if [ "$a" == "$b" ]; then
-	echo "Your home directory equals '/', fix that" 
-	exit 1
+#!/bin/bash
 elif [ $USER == "root" ]; then
 	echo "You Can't run this as root" 
 	exit 1
