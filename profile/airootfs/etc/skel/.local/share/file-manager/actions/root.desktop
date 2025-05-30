@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Action
+Tooltip=Open Folder As Root
+Name=Open Folder As Root
+Icon=gtk-dialog-authentication
+Profiles=on_folder;
+
+[X-Action-Profile on_folder]
+Exec=pkexec env WAYLAND_DISPLAY="/run/user/1000/wayland-1" XDG_RUNTIME_DIR=/run/user/0 pcmanfm %f
+MimeTypes=inode/directory;

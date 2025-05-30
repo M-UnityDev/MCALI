@@ -53,20 +53,19 @@ POSITIONAL_ARGS=()
 set -- "${POSITIONAL_ARGS[@]}"
 ChangeTheme () {
 	HomeDirectory=$HOME/
-	hyprctl setcursor $CursorTheme 20 > /dev/null & disown
-	hyprctl hyprpaper preload $Wall > /dev/null & disown
-	hyprctl hyprpaper wallpaper ,$Wall > /dev/null & disown
-	ln -sf $Logo /ast/spr/cur/LogoCurrent.png &
-	cp -f $KittyConfig /ast/thm/cur/KittyCurrent.conf
-	cp -f $ColorConfig /ast/thm/cur/ColorCurrent.css 
 	cp -f $HyprPaperConfig $HomeDirectory.config/hypr/hyprpaper.conf
 	cp -f $HyprLockConfig /ast/thm/cur/HyprCurrent.conf
 	cp -f $HyprCursorConfig /ast/thm/cur/HyprCursorCurrent.conf
-	kitty @ load-config &
+	hyprctl setcursor $CursorTheme 20 > /dev/null
+	hyprctl hyprpaper preload $Wall > /dev/null
+	hyprctl hyprpaper wallpaper ,$Wall > /dev/null
+	hyprctl keyword decoration:screen_shader "~/.config/hypr/shaders/shake.glsl" > /dev/null
+	ln -sf $Logo /ast/spr/cur/LogoCurrent.png
+	cp -f $KittyConfig /ast/thm/cur/KittyCurrent.conf
+	cp -f $ColorConfig /ast/thm/cur/ColorCurrent.css 
 	killall waybar
 	exec waybar &> /dev/null
 }
-hyprshade on shake &
 ChangeTheme & disown
-sleep 0.3
-hyprshade off 
+sleep 0.4
+hyprctl keyword decoration:screen_shader ""

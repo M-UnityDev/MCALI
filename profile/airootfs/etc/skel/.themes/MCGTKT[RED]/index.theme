@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=MCGTKT[RED]
+Comment=M-Unity's Custom GTK Theme [Red]
+Encoding=UTF-8
+
+
+[X-GNOME-Metatheme]
+GtkTheme=MCGTKT[RED]
+ButtonLayout=menu:minimize,maximize,close
