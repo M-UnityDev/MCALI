@@ -1,4 +1,4 @@
-@import "/ast/thm/cur/ColorCurrent.css";
+@import "../../.local/share/MCALR/thm/cur/ColorCurrent.css";
 window {
     background-color: @Foreground;
 }

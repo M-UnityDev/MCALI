@@ -4,44 +4,44 @@ POSITIONAL_ARGS=()
 		-c)
 			case $2 in
 				r)
-					KittyConfig="/ast/thm/KittyRed.conf"
-					ColorConfig="/ast/thm/ColorRed.css"
-					HyprPaperConfig="/ast/thm/HyprPaperRed.conf"
-					HyprLockConfig="/ast/thm/HyprRed.conf"
-					HyprCursorConfig="/ast/thm/HyprCursorRed.conf"
+					KittyConfig="$XDG_DATA_HOME/MCALR/thm/KittyRed.conf"
+					ColorConfig="$XDG_DATA_HOME/MCALR/thm/ColorRed.css"
+					HyprPaperConfig="$XDG_DATA_HOME/MCALR/thm/HyprPaperRed.conf"
+					HyprLockConfig="$XDG_DATA_HOME/MCALR/thm/HyprRed.conf"
+					HyprCursorConfig="$XDG_DATA_HOME/MCALR/thm/HyprCursorRed.conf"
 					CursorTheme="Bibata-Original-Red"
-					Wall="/ast/spr/WallRed.png"
-					Logo="/ast/spr/LogoRed.png"
+					Wall="$XDG_DATA_HOME/MCALR/spr/WallRed.png"
+					Logo="$XDG_DATA_HOME/MCALR/spr/LogoRed.png"
 					;;
                 g)
-                    KittyConfig="/ast/thm/KittyGreen.conf"
-                    ColorConfig="/ast/thm/ColorGreen.css"
-					HyprPaperConfig="/ast/thm/HyprPaperGreen.conf"
-					HyprLockConfig="/ast/thm/HyprGreen.conf"
-					HyprCursorConfig="/ast/thm/HyprCursorGreen.conf"
+                    KittyConfig="$XDG_DATA_HOME/MCALR/thm/KittyGreen.conf"
+                    ColorConfig="$XDG_DATA_HOME/MCALR/thm/ColorGreen.css"
+					HyprPaperConfig="$XDG_DATA_HOME/MCALR/thm/HyprPaperGreen.conf"
+					HyprLockConfig="$XDG_DATA_HOME/MCALR/thm/HyprGreen.conf"
+					HyprCursorConfig="$XDG_DATA_HOME/MCALR/thm/HyprCursorGreen.conf"
 					CursorTheme="Bibata-Original-Green"
-					Wall="/ast/spr/WallGreen.png"
-					Logo="/ast/spr/LogoGreen.png"
+					Wall="$XDG_DATA_HOME/MCALR/spr/WallGreen.png"
+					Logo="$XDG_DATA_HOME/MCALR/spr/LogoGreen.png"
                     ;;
                 b)
-                    KittyConfig="/ast/thm/KittyBlue.conf"
-                    ColorConfig="/ast/thm/ColorBlue.css"
-					HyprPaperConfig="/ast/thm/HyprPaperBlue.conf"
-					HyprLockConfig="/ast/thm/HyprBlue.conf"
-					HyprCursorConfig="/ast/thm/HyprCursorBlue.conf"
+                    KittyConfig="$XDG_DATA_HOME/MCALR/thm/KittyBlue.conf"
+                    ColorConfig="$XDG_DATA_HOME/MCALR/thm/ColorBlue.css"
+					HyprPaperConfig="$XDG_DATA_HOME/MCALR/thm/HyprPaperBlue.conf"
+					HyprLockConfig="$XDG_DATA_HOME/MCALR/thm/HyprBlue.conf"
+					HyprCursorConfig="$XDG_DATA_HOME/MCALR/thm/HyprCursorBlue.conf"
 					CursorTheme="Bibata-Original-Blue"
-					Wall="/ast/spr/WallBlue.png"
-					Logo="/ast/spr/LogoBlue.png"
+					Wall="$XDG_DATA_HOME/MCALR/spr/WallBlue.png"
+					Logo="$XDG_DATA_HOME/MCALR/spr/LogoBlue.png"
                     ;;
                 w)
-					KittyConfig="/ast/thm/KittyBlack.conf"
-                    ColorConfig="/ast/thm/ColorBlack.css"
-					HyprPaperConfig="/ast/thm/HyprPaperBlack.conf"
-					HyprLockConfig="/ast/thm/HyprBlack.conf"
-					HyprCursorConfig="/ast/thm/HyprCursorBlack.conf"
+					KittyConfig="$XDG_DATA_HOME/MCALR/thm/KittyBlack.conf"
+                    ColorConfig="$XDG_DATA_HOME/MCALR/thm/ColorBlack.css"
+					HyprPaperConfig="$XDG_DATA_HOME/MCALR/thm/HyprPaperBlack.conf"
+					HyprLockConfig="$XDG_DATA_HOME/MCALR/thm/HyprBlack.conf"
+					HyprCursorConfig="$XDG_DATA_HOME/MCALR/thm/HyprCursorBlack.conf"
 					CursorTheme="Bibata-Original-Black"
-					Wall="/ast/spr/WallBlack.png"
-					Logo="/ast/spr/LogoBlack.png"
+					Wall="$XDG_DATA_HOME/MCALR/spr/WallBlack.png"
+					Logo="$XDG_DATA_HOME/MCALR/spr/LogoBlack.png"
                     ;;
 			esac
 				;;
@@ -52,17 +52,17 @@ POSITIONAL_ARGS=()
 	esac
 set -- "${POSITIONAL_ARGS[@]}"
 ChangeTheme () {
-	HomeDirectory=$HOME/
-	cp -f $HyprPaperConfig $HomeDirectory.config/hypr/hyprpaper.conf
-	cp -f $HyprLockConfig /ast/thm/cur/HyprCurrent.conf
-	cp -f $HyprCursorConfig /ast/thm/cur/HyprCursorCurrent.conf
+	HomeDirectory=$HOME
+	ln -sf $HyprPaperConfig $HomeDirectory/.config/hypr/hyprpaper.conf
+	ln -sf $HyprLockConfig $XDG_DATA_HOME/MCALR/thm/cur/HyprCurrent.conf
+	ln -sf $HyprCursorConfig $XDG_DATA_HOME/MCALR/thm/cur/HyprCursorCurrent.conf
 	hyprctl setcursor $CursorTheme 20 > /dev/null
 	hyprctl hyprpaper preload $Wall > /dev/null
 	hyprctl hyprpaper wallpaper ,$Wall > /dev/null
 	hyprctl keyword decoration:screen_shader "~/.config/hypr/shaders/shake.glsl" > /dev/null
-	ln -sf $Logo /ast/spr/cur/LogoCurrent.png
-	cp -f $KittyConfig /ast/thm/cur/KittyCurrent.conf
-	cp -f $ColorConfig /ast/thm/cur/ColorCurrent.css 
+	ln -sf $Logo $XDG_DATA_HOME/MCALR/spr/cur/LogoCurrent.png
+	ln -sf $KittyConfig $XDG_DATA_HOME/MCALR/thm/cur/KittyCurrent.conf
+	ln -sf $ColorConfig $XDG_DATA_HOME/MCALR/thm/cur/ColorCurrent.css 
 	killall waybar
 	exec waybar &> /dev/null
 }
