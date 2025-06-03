@@ -16,6 +16,5 @@ cd $HOME
 echo "Cleaning Up..."
 rm -rf $HOME/yay/
 echo "Installing AUR Packages..."
-yay -S wlogout --noconfirm > ./MCALIAURLOGS 2>&1
-echo "Start configuration complete, Enjoy your LiveCD instance, 
-or start installation using 'bash /ast/scr/install.sh' command!"
+# yay -S  --noconfirm > ./MCALIAURLOGS 2>&1
+echo "Start configuration complete, Enjoy your LiveCD instance!"
